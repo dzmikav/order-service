@@ -1,22 +1,15 @@
-# Catalog Service
+# Order Service
 
-This application is part of the Polar Bookshop system and provides the functionality for managing
-the books in the bookshop catalog. It's part of the project built in the
-[Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book
+This application is part of the Polar Bookshop system and provides the functionality for ordering books.
+It's part of the project built in the [Cloud Native Spring in Action](https://www.manning.com/books/cloud-native-spring-in-action) book
 by [Thomas Vitale](https://www.thomasvitale.com).
 
 ## REST API
 
-| Endpoint	      | Method   | Req. body  | Status | Resp. body     | Description    		   	     |
-|:---------------:|:--------:|:----------:|:------:|:--------------:|:-------------------------------|
-| `/books`        | `GET`    |            | 200    | Book[]         | Get all the books in the catalog. |
-| `/books`        | `POST`   | Book       | 201    | Book           | Add a new book to the catalog. |
-|                 |          |            | 422    |                | A book with the same ISBN already exists. |
-| `/books/{isbn}` | `GET`    |            | 200    | Book           | Get the book with the given ISBN. |
-|                 |          |            | 404    |                | No book with the given ISBN exists. |
-| `/books/{isbn}` | `PUT`    | Book       | 200    | Book           | Update the book with the given ISBN. |
-|                 |          |            | 200    | Book           | Create a book with the given ISBN. |
-| `/books/{isbn}` | `DELETE` |            | 204    |                | Delete the book with the given ISBN. |
+| Endpoint	      | Method   | Req. body    | Status | Resp. body     | Description    		   	         |
+|:---------------:|:--------:|:------------:|:------:|:--------------:|:---------------------------------|
+| `/orders`       | `GET`    |              | 200    | Orders         | Get all the orders.              |
+| `/orders`       | `POST`   | OrderRequest | 200    | Order          | Submit a new order.              |
 
 ## Useful Commands
 
@@ -31,5 +24,5 @@ by [Thomas Vitale](https://www.thomasvitale.com).
 After building the application, you can also run it from the Java CLI:
 
 ```bash
-java -jar build/libs/catalog-service-0.0.1-SNAPSHOT.jar
+java -jar build/libs/order-service-0.0.1-SNAPSHOT.jar
 ```
